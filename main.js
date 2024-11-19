@@ -22,6 +22,11 @@ class Industry {
         let sum_sales = calc_sum_sales(this.company);
         let sum_sold = calc_sum_sold(this.company);
         let sum_history_rd = calc_sum_history_rd(this.company);
+        let sum_history_mk = calc_sum_histort_mk(this.company);
+        let sum_share_effect_price = calc_sum_share_effect_price(this.company);
+        let sum_share_effect_mk = calc_sum_share_effect_mk(this.company);
+        let sum_share_effect_rd = calc_sum_share_effect_rd(this.company);
+        let sum_size = calc_sum_size(this.companies);
 
         for(let i=0; i<this.company.length; i++) {
             this.company[i].sum_decision_mk = sum_decision_mk;
@@ -32,6 +37,11 @@ class Industry {
             this.company[i].sum_sales = sum_sales;
             this.company[i].sum_sold = sum_sold;
             this.company[i].sum_history_rd = sum_history_rd;
+            this.company[i].sum_history_mk = sum_history_mk;
+            this.company[i].sum_share_effect_price = sum_share_effect_price;
+            this.company[i].sum_share_effect_mk = sum_share_effect_mk;
+            this.company[i].sum_share_effect_rd = sum_share_effect_rd;
+            this.company[i].sum_size = sum_size;
         }
 
         function calc_sum_decision_mk(decisions) {
@@ -86,6 +96,46 @@ class Industry {
             let sum = 0;
             for(let i=0; i<companies.length; i++) {
                 sum += companies[i].history_rd;
+            }
+            return sum;
+        }
+
+        function calc_sum_histort_mk(companies) {
+            let sum = 0;
+            for(let i=0; i<companies.length; i++) {
+                sum += companies[i].history_mk;
+            }
+            return sum;
+        }
+
+        function calc_sum_share_effect_price(companies) {
+            let sum = 0;
+            for(let i=0; i<companies.length; i++) {
+                sum += companies[i].share_effect_price;
+            }
+            return sum;
+        }
+
+        function calc_sum_share_effect_mk(companies) {
+            let sum = 0;
+            for(let i=0; i<companies.length; i++) {
+                sum += companies[i].share_effect_mk;
+            }
+            return sum;
+        }
+
+        function calc_sum_share_effect_rd(companies) {
+            let sum = 0;
+            for(let i=0; i<companies.length; i++) {
+                sum += companies[i].share_effect_rd;
+            }
+            return sum;
+        }
+
+        function calc_sum_size(companies) {
+            let sum = 0;
+            for(let i=0; i<companies.length; i++) {
+                sum += companies[i].size;
             }
             return sum;
         }
